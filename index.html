@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mars News, Facts, and Images...</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+  <link rel="icon" href="data:;base64,iVBORwOKGO="> <!-- Kills favicon.ico error -->
+</head>
+
+<body>
+
+  <div class = "container-fluid">
+    <div class = 'row banner'>
+        <div class="col-md-3">
+        </div>
+        <div class='col-md-6 text-center'>
+            <br> <br>
+            <h1 class="banner_txt"> Mission to Mars </h1>
+            <a href="/scrape" id="scrape_btn" class="btn btn-primary" role="button">Scrape New Data</a>
+            <br> <br>
+        </div>
+        <div class="col-md-3">
+        </div>
+    </div>
+
+    <div id="first_text" class="row">
+        <div class='col-md-1'>
+        </div>
+        <div class="col-md-10">
+        <br> <br>
+            {% if news_title %}
+                <h2>Latest Mars News</h2>
+                <hr>
+                <h3>{{news_title}}</h3>
+                <p> {{news_p}}</p>
+                <br>
+            {% else %}
+                <h2>Click the Scrape New Data button above to get the latest Mars news, facts, and images</h2>
+              <br>
+            {% endif %}
+        </div>
+        <div class='col-md-1'>
+        </div>
+    </div>
+</body>
+</html>
